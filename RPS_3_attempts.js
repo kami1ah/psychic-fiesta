@@ -7,14 +7,7 @@ const rl = readline.createInterface({
 let user_score = 0;
 let computer_score = 0;
 let round = 0;
-//then the computer randomises and output rock/paper/scissors
-const array = ["rock", "paper", "scissors"]
-const computersChoice = (array) => {
-    const rIndex = Math.floor(Math.random() * array.length);
-    let computer = array[rIndex];
-    return computer;
-}
-let computer = computersChoice(array)
+
 //Comparing the computer choice to user's input
 const result = (choice, computer) => {
     
@@ -42,14 +35,24 @@ function finalResult (user_score, computer_score){
        
     }
 //Playing the game with the user input
-const playRound = () => {
+    const playRound = () => {
+    //the computer randomises and output rock/paper/scissors
+    const array = ["rock", "paper", "scissors"]
+    const computersChoice = (array) => {
+    const rIndex = Math.floor(Math.random() * array.length);
+    let computer = array[rIndex];
+    return computer;
+    }
+    let computer = computersChoice(array)
+
+    //the user inputs their choice
     rl.question(`Enter your choice (rock/paper/scissors)`, choice => {
     if (choice == "rock" || choice == "paper" || choice == "scissors") {
         console.log(`Your choice is ${choice}!`);
         console.log(`Computer's choice is ${computer}!`);//
         // console.log (computersChoice(array));
         result(choice, computer)
-                    round += 1;
+                round += 1;
             console.log(`Round: ${round}`);
 
             if (round < 3) {
@@ -61,6 +64,7 @@ const playRound = () => {
     }
     else {
         console.log("Invalid input. Please enter rock, paper, or scissors.");
+        playRound()
     }  
 })};
 
