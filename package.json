@@ -1,0 +1,24 @@
+{
+  "name": "psychic-fiesta",
+  "version": "1.0.0",
+  "description": "La Fosse Hackathon",
+  "main": "game.js",
+  "scripts": {
+    "dev": "watchify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kami1ah/psychic-fiesta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kami1ah/psychic-fiesta/issues"
+  },
+  "homepage": "https://github.com/kami1ah/psychic-fiesta#readme",
+  "devDependencies": {
+    "watchify": "^4.0.0"
+  }
+}
