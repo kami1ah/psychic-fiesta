@@ -36,6 +36,7 @@ rl.question(`Enter your choice (rock/paper/scissors)?\n`, choice => {
 //compare and see which wins 
 const result = (choice, computer) => {
     if ((computer === 'rock' && choice === 'rock') || (computer === 'scissors' && choice === 'scissors') || (computer === 'paper' && choice === 'paper')) {
+
         console.log('Draw');
     }
     else if ((computer === 'rock' && choice === 'paper') || (computer === 'paper' && choice === 'scissors') || (computer === 'scissors' && choice === 'rock') ) { 
@@ -50,3 +51,25 @@ const result = (choice, computer) => {
 //console log the winner 
 
 //3 tries and see the majority winner.
+function fuzzyCountValues (arr) {
+        const final = {}
+    for (let i = 0; i < arr.length; i++){
+        let element
+    
+        if (typeof arr[i]==="string"){
+            element = arr[i].toLowerCase()
+        }       
+        if (typeof arr[i]==="number"){
+            element = Math.trunc(arr[i])
+
+        }
+        if (!(element in final)) {
+            final[element] = 1}
+            else {
+                final[element] += 1
+            }
+        
+        }
+    
+    return final
+}
